@@ -6,7 +6,6 @@
 }
 .sidebar {
   width: 20vw;
-  /* background-color: chartreuse; */
 }
 .content {
   width: 80vw;
@@ -28,7 +27,6 @@
   display: flex;
   justify-content: space-evenly;
   padding-top: 30px;
-  /* position: relative; */
 }
 .contactMenu {
   display: flex;

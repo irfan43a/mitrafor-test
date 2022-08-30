@@ -130,16 +130,6 @@ const Home = () => {
       title: "Name",
       dataIndex: "name",
       width: "30%",
-      filters: [
-        {
-          text: "Pensil",
-          value: "Pensil",
-        },
-        {
-          text: "Pulpen",
-          value: "pulpen",
-        },
-      ],
       onFilter: (value, record) => record.name.indexOf(value) === 0,
       defaultSortOrder: "descend",
       sorter: (a, b) => a.name.length - b.name.length,
@@ -184,7 +174,6 @@ const Home = () => {
       ],
       onFilter: (value, record) => record.categ.indexOf(value) === 0,
       defaultSortOrder: "descend",
-      // sorter: (a, b) => a.name.length - b.name.length,
     },
   ];
 
@@ -209,7 +198,7 @@ const Home = () => {
               onClick: (e) => showModal(record),
             })}
           />
-          <Modal title="Data Product" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+          <Modal title={("Data Product", dataDetail.key)} visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
             <p>No : {dataDetail.key}</p>
             <p>Name : {dataDetail.name}</p>
             <p>Price : {dataDetail.price}</p>
