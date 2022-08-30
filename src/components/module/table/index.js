@@ -1,13 +1,35 @@
-import React, { useRef, useState } from "react";
-import { Button, Input, Space, Table } from "antd";
-import styles from "./home.module.css";
-import SideBar from "../../components/module/sidebar";
 import { SearchOutlined } from "@ant-design/icons";
+import { Button, Input, Space, Table } from "antd";
+import React, { useRef, useState } from "react";
 import Highlighter from "react-highlight-words";
-import dataJson from "../../data.json";
-import "antd/dist/antd.css";
+const data = [
+  {
+    key: "1",
+    name: "John Brown",
+    age: 32,
+    address: "New York No. 1 Lake Park",
+  },
+  {
+    key: "2",
+    name: "Joe Black",
+    age: 42,
+    address: "London No. 1 Lake Park",
+  },
+  {
+    key: "3",
+    name: "Jim Green",
+    age: 32,
+    address: "Sidney No. 1 Lake Park",
+  },
+  {
+    key: "4",
+    name: "Jim Red",
+    age: 32,
+    address: "London No. 2 Lake Park",
+  },
+];
 
-const Home = () => {
+const App = () => {
   const [searchText, setSearchText] = useState("");
   const [searchedColumn, setSearchedColumn] = useState("");
   const searchInput = useRef(null);
@@ -62,6 +84,19 @@ const Home = () => {
           >
             Reset
           </Button>
+          <Button
+            type="link"
+            size="small"
+            onClick={() => {
+              confirm({
+                closeDropdown: false,
+              });
+              setSearchText(selectedKeys[0]);
+              setSearchedColumn(dataIndex);
+            }}
+          >
+            Filter
+          </Button>
         </Space>
       </div>
     ),
@@ -96,88 +131,29 @@ const Home = () => {
 
   const columns = [
     {
-      title: "No",
-      dataIndex: "no",
-      width: "5%",
-      defaultSortOrder: "ascend",
-      sorter: (a, b) => a.no - b.no,
-      responsive: ["lg"],
-      align: "center",
-    },
-    {
       title: "Name",
       dataIndex: "name",
-      width: "30%",
-      filters: [
-        {
-          text: "Pensil",
-          value: "Pensil",
-        },
-        {
-          text: "Pulpen",
-          value: "pulpen",
-        },
-      ],
-      onFilter: (value, record) => record.name.indexOf(value) === 0,
-      defaultSortOrder: "descend",
-      sorter: (a, b) => a.name.length - b.name.length,
       key: "name",
-      ...getColumnSearchProps("name"),
-      responsive: ["lg"],
-    },
-    {
-      title: "Price",
-      dataIndex: "price",
-      align: "center",
-      width: "25%",
-      defaultSortOrder: "descend",
-      sorter: (a, b) => a.price - b.price,
-    },
-    {
-      title: "Qty",
-      dataIndex: "qty",
-      width: "20%",
-      align: "center",
-      defaultSortOrder: "descend",
-      sorter: (a, b) => a.qty - b.qty,
-    },
-    {
-      title: "Category",
-      dataIndex: "categ",
       width: "30%",
-      align: "center",
-      filters: [
-        {
-          text: "Alat Sekolah",
-          value: "Alat Sekolah",
-        },
-        {
-          text: "Elektronik",
-          value: "Elektronik",
-        },
-      ],
-      onFilter: (value, record) => record.categ.indexOf(value) === 0,
-      defaultSortOrder: "descend",
-      // sorter: (a, b) => a.name.length - b.name.length,
+      ...getColumnSearchProps("name"),
+    },
+    {
+      title: "Age",
+      dataIndex: "age",
+      key: "age",
+      width: "20%",
+      ...getColumnSearchProps("age"),
+    },
+    {
+      title: "Address",
+      dataIndex: "address",
+      key: "address",
+      ...getColumnSearchProps("address"),
+      sorter: (a, b) => a.address.length - b.address.length,
+      sortDirections: ["descend", "ascend"],
     },
   ];
-
-  const onChange = (pagination, filters, sorter, extra) => {
-    console.log("params", pagination, filters, sorter, extra);
-  };
-
-  return (
-    <div className={styles.pageHome}>
-      <div className={styles.sidebar}>
-        <SideBar />
-      </div>
-      <div className={styles.content}>
-        <div className={styles.table}>
-          <Table dataSource={dataJson} columns={columns} bordered onChange={onChange} pagination={"topRight"} />
-        </div>
-      </div>
-    </div>
-  );
+  return <Table columns={columns} dataSource={data} />;
 };
 
-export default Home;
+export default App;
