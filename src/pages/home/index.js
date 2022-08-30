@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Button, Input, Space, Table } from "antd";
+import { Button, Input, Space, Table, Modal } from "antd";
 import styles from "./home.module.css";
 import SideBar from "../../components/module/sidebar";
 import { SearchOutlined } from "@ant-design/icons";
@@ -11,6 +11,20 @@ const Home = () => {
   const [searchText, setSearchText] = useState("");
   const [searchedColumn, setSearchedColumn] = useState("");
   const searchInput = useRef(null);
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = (record) => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
 
   const handleSearch = (selectedKeys, confirm, dataIndex) => {
     confirm();
@@ -169,7 +183,7 @@ const Home = () => {
   const onChange = (pagination, filters, sorter, extra) => {
     console.log("params", pagination, filters, sorter, extra);
   };
-
+  console.log(dataJson[0]);
   return (
     <div className={styles.pageHome}>
       <div className={styles.sidebar}>
@@ -177,7 +191,22 @@ const Home = () => {
       </div>
       <div className={styles.content}>
         <div className={styles.table}>
-          <Table dataSource={dataJson} columns={columns} bordered onChange={onChange} pagination={"topRight"} />
+          <Table
+            dataSource={dataJson}
+            columns={columns}
+            bordered
+            onChange={onChange}
+            pagination={"topRight"}
+            onRow={(record, rowIndex) => ({
+              onClick: (e) => showModal(record),
+            })}
+          />
+          <Modal title="Data Product" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+            <p>Name:{}</p>
+            <p>Price:</p>
+            <p>Qty:</p>
+            <p>Category:</p>
+          </Modal>
         </div>
       </div>
     </div>
