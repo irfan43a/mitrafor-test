@@ -11,11 +11,19 @@ const Home = () => {
   const [searchText, setSearchText] = useState("");
   const [searchedColumn, setSearchedColumn] = useState("");
   const searchInput = useRef(null);
-
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [dataDetail, setDataDetail] = useState({
+    key: "",
+    name: "",
+    price: 0,
+    no: 0,
+    qty: 0,
+    categ: "",
+  });
 
   const showModal = (record) => {
     setIsModalVisible(true);
+    setDataDetail(record);
   };
 
   const handleOk = () => {
@@ -202,10 +210,11 @@ const Home = () => {
             })}
           />
           <Modal title="Data Product" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-            <p>Name:{}</p>
-            <p>Price:</p>
-            <p>Qty:</p>
-            <p>Category:</p>
+            <p>No : {dataDetail.key}</p>
+            <p>Name : {dataDetail.name}</p>
+            <p>Price : {dataDetail.price}</p>
+            <p>Qty : {dataDetail.qty}</p>
+            <p>Category : {dataDetail.categ}</p>
           </Modal>
         </div>
       </div>
