@@ -1,0 +1,10 @@
+.sidebar {
+  width: 20vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 10px;
+}
+.menu {
+  text-align: center;
+}

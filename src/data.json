@@ -1,0 +1,98 @@
+[
+  {
+    "key": "1",
+    "no": 1,
+    "name": "Pensil",
+    "qty": 32,
+    "price": 3500,
+    "categ": "Alat Sekolah"
+  },
+  {
+    "key": "2",
+    "no": 2,
+    "name": "Pulpen",
+    "qty": 12,
+    "price": 5500,
+    "categ": "Alat Sekolah"
+  },
+  {
+    "key": "3",
+    "no": 3,
+    "name": "Penghapus",
+    "qty": 50,
+    "price": 500,
+    "categ": "Alat Sekolah"
+  },
+  {
+    "key": "4",
+    "no": 4,
+    "name": "Penggaris",
+    "qty": 8,
+    "price": 10500,
+    "categ": "Alat Sekolah"
+  },
+  {
+    "key": "5",
+    "no": 5,
+    "name": "Buku",
+    "qty": 100,
+    "price": 5000,
+    "categ": "Alat Sekolah"
+  },
+  {
+    "key": "6",
+    "no": 6,
+    "name": "Tas",
+    "qty": 35,
+    "price": 150000,
+    "categ": "Alat Sekolah"
+  },
+  {
+    "key": "7",
+    "no": 7,
+    "name": "Sepatu",
+    "qty": 25,
+    "price": 85000,
+    "categ": "Alat Sekolah"
+  },
+  {
+    "key": "8",
+    "no": 8,
+    "name": "Kemeja",
+    "qty": 200,
+    "price": 95000,
+    "categ": "Alat Sekolah"
+  },
+  {
+    "key": "9",
+    "no": 9,
+    "name": "Celana",
+    "qty": 170,
+    "price": 65000,
+    "categ": "Alat Sekolah"
+  },
+  {
+    "key": "10",
+    "no": 10,
+    "name": "Celana Panjang",
+    "qty": 110,
+    "price": 85000,
+    "categ": "Alat Sekolah"
+  },
+  {
+    "key": "11",
+    "no": 11,
+    "name": "Dasi",
+    "qty": 190,
+    "price": 15000,
+    "categ": "Alat Sekolah"
+  },
+  {
+    "key": "12",
+    "no": 12,
+    "name": "Dispenser",
+    "qty": 10,
+    "price": 150000,
+    "categ": "Elektronik"
+  }
+]

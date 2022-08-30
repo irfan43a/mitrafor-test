@@ -1,0 +1,36 @@
+.pageAbout {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+}
+.sidebar {
+  width: 20vw;
+  /* background-color: chartreuse; */
+}
+.content {
+  width: 80%;
+  background-color: aquamarine;
+}
+.jumbotron {
+  background-color: rgb(255, 119, 7);
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+}
+.about {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 30px;
+}
+.aboutmenu {
+  background-color: aqua;
+  width: 85%;
+  height: 370px;
+  border-radius: 10px;
+  margin-top: -60px;
+  padding: 30px 50px;
+}
