@@ -94,5 +94,85 @@
     "qty": 10,
     "price": 150000,
     "categ": "Elektronik"
+  },
+  {
+    "key": "13",
+    "no": 13,
+    "name": "Rice Cooker",
+    "qty": 10,
+    "price": 350000,
+    "categ": "Elektronik"
+  },
+  {
+    "key": "14",
+    "no": 14,
+    "name": "Kulkas",
+    "qty": 7,
+    "price": 5500000,
+    "categ": "Elektronik"
+  },
+  {
+    "key": "15",
+    "no": 15,
+    "name": "TV - LED",
+    "qty": 15,
+    "price": 4500000,
+    "categ": "Elektronik"
+  },
+  {
+    "key": "16",
+    "no": 16,
+    "name": "PC",
+    "qty": 16,
+    "price": 3500000,
+    "categ": "Elektronik"
+  },
+  {
+    "key": "17",
+    "no": 17,
+    "name": "Laptop",
+    "qty": 10,
+    "price": 5000000,
+    "categ": "Elektronik"
+  },
+  {
+    "key": "18",
+    "no": 18,
+    "name": "tablet",
+    "qty": 10,
+    "price": 1500000,
+    "categ": "Elektronik"
+  },
+  {
+    "key": "19",
+    "no": 19,
+    "name": "Smartphone",
+    "qty": 17,
+    "price": 3500000,
+    "categ": "Elektronik"
+  },
+  {
+    "key": "20",
+    "no": 20,
+    "name": "Ear phone",
+    "qty": 100,
+    "price": 150000,
+    "categ": "Elektronik"
+  },
+  {
+    "key": "21",
+    "no": 21,
+    "name": "Meja",
+    "qty": 11,
+    "price": 350000,
+    "categ": "Meubel"
+  },
+  {
+    "key": "22",
+    "no": 22,
+    "name": "Kursi",
+    "qty": 10,
+    "price": 150000,
+    "categ": "Meubel"
   }
 ]

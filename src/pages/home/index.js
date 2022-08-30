@@ -155,6 +155,10 @@ const Home = () => {
           text: "Elektronik",
           value: "Elektronik",
         },
+        {
+          text: "Meubel",
+          value: "Meubel",
+        },
       ],
       onFilter: (value, record) => record.categ.indexOf(value) === 0,
       defaultSortOrder: "descend",
